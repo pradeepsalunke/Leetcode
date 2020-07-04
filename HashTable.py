@@ -2,7 +2,7 @@ class HashTable:
     #constructor
     def __init__(self):
         #max size of dict in python
-        self.size = 2
+        self.size = 256
         #creating an empty list
         self.map = [None] * self.size #[[],[],[]]
         print(self.map)
@@ -62,7 +62,7 @@ class HashTable:
             return False
         #we use range because we need index in the list to pop
         for i in range(0,len(self.map[hashed_key])):
-            #
+            #moving through the linkedList
             if self.map[hashed_key][i][0]==key:
                 self.map[hashed_key].pop(i)
                 return True
