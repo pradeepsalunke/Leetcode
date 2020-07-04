@@ -12,7 +12,6 @@ class HashTable:
         hashed_key=0
         #creating an hash using ASCII value by adding ascii values of each char
         # and by dividing by total size to distribute equally among map -list
-
         for char in key:
             hashed_key += ord(char)
         return hashed_key%self.size
@@ -43,6 +42,7 @@ class HashTable:
             #else append
             self.map[hashed_key].append(slot)
             return True
+
     #lookup operation
     def get(self,key):
         #get hash of key  or get location of that key
@@ -55,7 +55,7 @@ class HashTable:
                 if pair[0]==key:
                     return pair[1]
         return None
-
+    #delete operation
     def delete(self,key):
         hashed_key=self.hash_func(key)
         if self.map[hashed_key] is None:
@@ -67,6 +67,14 @@ class HashTable:
                 self.map[hashed_key].pop(i)
                 return True
         return False
+
+    #to get the entire list items
+    def keys(self):
+        arr=[]
+        for i in range(0,len(self.map)):
+            if self.map[i]:
+                arr.append(self.map[i][0])
+
     def print(self):
         print('---PHONEBOOK----')
         print(self.map)
@@ -87,3 +95,4 @@ print(h.get('Mike'))
 h.print()
 h.delete('Bob')
 h.print()
+print(h.keys())
