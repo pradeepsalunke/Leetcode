@@ -87,32 +87,3 @@ print(h.get('Mike'))
 h.print()
 h.delete('Bob')
 h.print()
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-H = HashTable()
-H.set('key1','value1')
-H.set('key2','value2')
-H.set('key3','value3')
-
-H.set(10,'value10')
-H.set(20, 'value20')
-
-H['NEWWWWWWWWW'] = 'newwwwwwwww'
-
-print(H['key1'])
-print(H[10])
-print(H[20])
-print(H[30])
-print(H.hashmap)
-'''
